@@ -15,6 +15,8 @@ import { ListProdComponent } from './demo/list-prod/list-prod.component';
 import { RegletteComponent } from './demo/reglette/reglette.component';
 import { ZzComponent } from './demo/zz/zz.component';
 import { MynumberPipe } from './mynumber.pipe';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { MynumberPipe } from './mynumber.pipe';
     ListProdComponent,
     RegletteComponent,
     ZzComponent,
-    MynumberPipe
+    MynumberPipe,
+    WelcomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
