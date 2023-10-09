@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class TvaComponent {
   tabTaux :number[] = [ 5 , 10 , 20 ];
+
+  date = new Date();
   
   ht /*:number*/ = 0;
   tauxTva /*:number*/ = 20; //en %

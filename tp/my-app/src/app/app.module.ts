@@ -14,6 +14,7 @@ import { SeuilComponent } from './demo/seuil/seuil.component';
 import { ListProdComponent } from './demo/list-prod/list-prod.component';
 import { RegletteComponent } from './demo/reglette/reglette.component';
 import { ZzComponent } from './demo/zz/zz.component';
+import { MynumberPipe } from './mynumber.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ZzComponent } from './demo/zz/zz.component';
     SeuilComponent,
     ListProdComponent,
     RegletteComponent,
-    ZzComponent
+    ZzComponent,
+    MynumberPipe
   ],
   imports: [
     BrowserModule,
