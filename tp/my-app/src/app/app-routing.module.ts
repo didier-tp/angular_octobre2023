@@ -4,7 +4,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { BasicComponent } from './basic/basic.component';
 
-//WelcomeCompoent créé via
+//WelcomeComponent créé via
 //ng g component welcome
 
 const routes: Routes = [
