@@ -8,6 +8,12 @@ import { FooterComponent } from './footer/footer.component';
 import { BasicComponent } from './basic/basic.component';
 import { TvaComponent } from './basic/tva/tva.component';
 import { CalculatriceComponent } from './basic/calculatrice/calculatrice.component';
+import { FormsModule } from '@angular/forms';
+import { DemoComponent } from './demo/demo.component';
+import { SeuilComponent } from './demo/seuil/seuil.component';
+import { ListProdComponent } from './demo/list-prod/list-prod.component';
+import { RegletteComponent } from './demo/reglette/reglette.component';
+import { ZzComponent } from './demo/zz/zz.component';
 
 
 @NgModule({
@@ -17,11 +23,16 @@ import { CalculatriceComponent } from './basic/calculatrice/calculatrice.compone
     FooterComponent,
     BasicComponent,
     TvaComponent,
-    CalculatriceComponent
+    CalculatriceComponent,
+    DemoComponent,
+    SeuilComponent,
+    ListProdComponent,
+    RegletteComponent,
+    ZzComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
