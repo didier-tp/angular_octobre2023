@@ -8,7 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BasicComponent } from './basic/basic.component';
 import { TvaComponent } from './basic/tva/tva.component';
 import { CalculatriceComponent } from './basic/calculatrice/calculatrice.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemoComponent } from './demo/demo.component';
 import { SeuilComponent } from './demo/seuil/seuil.component';
 import { ListProdComponent } from './demo/list-prod/list-prod.component';
@@ -17,6 +17,7 @@ import { ZzComponent } from './demo/zz/zz.component';
 import { MynumberPipe } from './mynumber.pipe';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveLoginComponent } from './reactive-login/reactive-login.component';
 
 
 @NgModule({
@@ -34,11 +35,12 @@ import { LoginComponent } from './login/login.component';
     ZzComponent,
     MynumberPipe,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    ReactiveLoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule
+    AppRoutingModule, FormsModule , ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
