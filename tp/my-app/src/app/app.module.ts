@@ -21,6 +21,7 @@ import { ReactiveLoginComponent } from './reactive-login/reactive-login.componen
 import { TogglePanelComponent } from './common/component/toggle-panel/toggle-panel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
+import { ConversionComponent } from './conversion/conversion.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     WelcomeComponent,
     LoginComponent,
     ReactiveLoginComponent,
-    TogglePanelComponent
+    TogglePanelComponent,
+    ConversionComponent
   ],
   imports: [
     BrowserModule,
