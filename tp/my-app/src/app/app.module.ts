@@ -19,7 +19,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveLoginComponent } from './reactive-login/reactive-login.component';
 import { TogglePanelComponent } from './common/component/toggle-panel/toggle-panel.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TogglePanelComponent } from './common/component/toggle-panel/toggle-pan
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule , ReactiveFormsModule
+    AppRoutingModule, FormsModule , ReactiveFormsModule, BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
