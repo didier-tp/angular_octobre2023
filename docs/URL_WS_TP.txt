@@ -3,3 +3,5 @@ https://www.d-defrance.fr/tp/devise-api/private/devise (securisé)
 
 https://www.d-defrance.fr/tp/standalone-login-api/public/auth  username/password , username,status,message,token,scope
 (ex: https://github.com/didier-mycontrib/tp-app)
+
+https://www.d-defrance.fr/tp/devise-api/public/convert?source=EUR&target=USD&amount=50

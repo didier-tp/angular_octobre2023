@@ -1,7 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Devise } from '../data/devise';
-import { Observable, delay, of } from 'rxjs';
+import { Observable, delay, map, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+
+interface ResConv{
+  amount : number ,
+  source : string ,
+  target : string ,
+  result: number
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +47,8 @@ export class DeviseService {
    return this.http.get<Devise[]>(wsURL);
   }
 
+  /*
+  //V1 (simulation)
   public convertir$(montant: number,
                    codeDeviseSrc : string, 
                    codeDeviseTarget : string
@@ -50,4 +60,19 @@ export class DeviseService {
                  delay(222) //simuler une attente de 222ms 
             );
   }
+  */
+
+//V1 (simulation)
+public convertir$(montant: number,
+  codeDeviseSrc : string, 
+  codeDeviseTarget : string
+  ) : Observable<number> {
+    //let wsURL="https://www.d-defrance.fr/tp/devise-api/public/convert?source=EUR&target=USD&amount=50";
+    let wsURL=`https://www.d-defrance.fr/tp/devise-api/public/convert?source=${codeDeviseSrc}&target=${codeDeviseTarget}&amount=${montant}`;
+   return this.http.get<ResConv>(wsURL)
+                   .pipe(
+                    map( (res:ResConv) => res.result )
+                   );
+  }
+
 }
