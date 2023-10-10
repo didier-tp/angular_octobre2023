@@ -1,10 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 .enEvidence { color : blue; }
 
-.ng-valid[required] {
+input.ng-valid[required] {
     border-left: 5px solid  #42A948; /* green */
   }
 
 input.ng-invalid {
     border-left: 5px solid  #a94442; /* red */
+}
+
+/* label { width: 120px; display:inline-block;} */
+
+.myFormGroup {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.myLabel {
+  flex: 0 0  120px;
+   padding: 2px
+}
+
+.myItem {
+  flex: 1 1 auto;
+  padding: 2px
+}
+
+.myMaxSize {
+  width: 95%;
 }
