@@ -1,27 +1,27 @@
 <h3>login</h3>
 <form #formLogin="ngForm">
-  <div class="myFormGroup">
-    <label class="myLabel">username:</label>
-    <div class="myItem">
-       <input class="myMaxSize" [(ngModel)]="login.username" name="username" required  pattern="^[a-zA-Z].+" /> 
+  <div class="form-group row">
+    <label class="col-sm-3">username:</label>
+    <div class="col-sm-9  mb-1">
+       <input class="form-control" [(ngModel)]="login.username" name="username" required  pattern="^[a-zA-Z].+" /> 
       </div>
   </div>
 
-  <div class="myFormGroup">
-    <label class="myLabel">password:</label>
-    <div class="myItem">
-   <input class="myMaxSize" [(ngModel)]="login.password"  name="password" required minlength="3" /> 
+  <div class="form-group row">
+    <label class="col-sm-3">password:</label>
+    <div class="col-sm-9 mb-1">
+   <input class="form-control " [(ngModel)]="login.password"  name="password" required minlength="3" /> 
    </div>
   </div>
 
-  <div class="myFormGroup">
-    <label class="myLabel">roles:</label>
-    <div class="myItem">
-       <input  class="myMaxSize" [(ngModel)]="login.roles" name="roles" required  /> 
+  <div class="form-group row">
+    <label class="col-sm-3">roles:</label>
+    <div class="col-sm-9  mb-1">
+       <input  class="form-control" [(ngModel)]="login.roles" name="roles" required  /> 
     </div>
   </div>
 
-    <input type="button" value="login" (click)="onLogin()" 
+    <input type="button" class="btn btn-primary" value="login" (click)="onLogin()" 
        [disabled]="!formLogin.form.valid"/>
       <br/>
 </form>

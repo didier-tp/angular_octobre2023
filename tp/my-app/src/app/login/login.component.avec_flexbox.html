@@ -1,0 +1,28 @@
+<h3>login</h3>
+<form #formLogin="ngForm">
+  <div class="myFormGroup">
+    <label class="myLabel">username:</label>
+    <div class="myItem">
+       <input class="myMaxSize" [(ngModel)]="login.username" name="username" required  pattern="^[a-zA-Z].+" /> 
+      </div>
+  </div>
+
+  <div class="myFormGroup">
+    <label class="myLabel">password:</label>
+    <div class="myItem">
+   <input class="myMaxSize" [(ngModel)]="login.password"  name="password" required minlength="3" /> 
+   </div>
+  </div>
+
+  <div class="myFormGroup">
+    <label class="myLabel">roles:</label>
+    <div class="myItem">
+       <input  class="myMaxSize" [(ngModel)]="login.roles" name="roles" required  /> 
+    </div>
+  </div>
+
+    <input type="button" class="btn btn-primary" value="login" (click)="onLogin()" 
+       [disabled]="!formLogin.form.valid"/>
+      <br/>
+</form>
+message: {{message}}
