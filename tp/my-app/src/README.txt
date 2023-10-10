@@ -1,3 +1,5 @@
+Ajout d'onglets (un des composants prédéfinis de l'extension "@angular/material")
+
 1) ng add @angular/material
 
 2) on ajoute dans  app.module.ts
