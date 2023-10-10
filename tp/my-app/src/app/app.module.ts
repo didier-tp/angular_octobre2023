@@ -22,6 +22,7 @@ import { TogglePanelComponent } from './common/component/toggle-panel/toggle-pan
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ConversionComponent } from './conversion/conversion.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { ConversionComponent } from './conversion/conversion.component';
   imports: [
     BrowserModule,
     AppRoutingModule, FormsModule , ReactiveFormsModule, BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule , HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

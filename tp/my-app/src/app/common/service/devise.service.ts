@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Devise } from '../data/devise';
 import { Observable, delay, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeviseService {
   //V1 (simulation)
+  //V2 : appel de web service REST
+  //URL=https://www.d-defrance.fr/tp/devise-api/public/devise
 
   //jeux de données (en dur) pour pré-version (simulation asynchrone)
   private devises : Devise[] = [
@@ -15,11 +18,25 @@ export class DeviseService {
     new Devise('GBP','livre',0.9)
   ];
 
+  /*
+  //version 1 (simulation)
   public getAllDevises$() : Observable<Devise[]>{
       return of(this.devises) //version préliminaire (cependant asynchrone)
             .pipe(
                delay(111) //simuler une attente de 111ms 
             );
+  }
+  */
+
+  constructor(private http :HttpClient){
+    //injecte le service technique prédéfini HttpClient
+    //dans le service "DeviseService"
+  }
+  
+  //version 2 (vrai appel HTTP)
+  public getAllDevises$() : Observable<Devise[]>{
+   let wsURL="https://www.d-defrance.fr/tp/devise-api/public/devise";
+   return this.http.get<Devise[]>(wsURL);
   }
 
   public convertir$(montant: number,
