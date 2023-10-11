@@ -62,7 +62,7 @@ export class DeviseService {
   }
   */
 
-//V1 (simulation)
+//V2 (vrai appel de WS)
 public convertir$(montant: number,
   codeDeviseSrc : string, 
   codeDeviseTarget : string
