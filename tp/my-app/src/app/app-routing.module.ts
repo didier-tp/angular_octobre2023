@@ -7,8 +7,9 @@ import { ReactiveLoginComponent } from './reactive-login/reactive-login.componen
 import { DemoComponent } from './demo/demo.component';
 import { ConversionComponent } from './conversion/conversion.component';
 import { DeviseComponent } from './devise/devise.component';
-import { CalculatriceComponent } from './basic/calculatrice/calculatrice.component';
+
 import { TvaComponent } from './basic/tva/tva.component';
+import { CalculatriceComponent } from './basic/calculatrice/calculatrice.component';
 
 //WelcomeComponent créé via
 //ng g component welcome
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'basic', component: BasicComponent ,
   children: [
    { path: 'tva', component: TvaComponent },
-   { path: 'calculatrice', component: CalculatriceComponent },
+   { path: 'calculatrice/:mode', component: CalculatriceComponent },
    { path: '', redirectTo: 'tva', pathMatch: 'prefix'}
    ]
   },
