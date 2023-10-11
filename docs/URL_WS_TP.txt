@@ -5,3 +5,5 @@ https://www.d-defrance.fr/tp/standalone-login-api/public/auth  username/password
 (ex: https://github.com/didier-mycontrib/tp-app)
 
 https://www.d-defrance.fr/tp/devise-api/public/convert?source=EUR&target=USD&amount=50
+
+http-server --proxy https://www.d-defrance.fr/tp -c-1 dist/my-app
