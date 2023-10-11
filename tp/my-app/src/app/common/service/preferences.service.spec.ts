@@ -19,3 +19,5 @@ describe('PreferencesService', () => {
   })
 
 });
+
+//ng test --watch=false --include=**/service/preferences.service.spec.ts
