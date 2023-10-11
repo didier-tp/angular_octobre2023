@@ -15,6 +15,10 @@ interface ResConv{
   providedIn: 'root'
 })
 export class DeviseService {
+
+   //private _baseUrl = "https://www.d-defrance.fr/tp/devise-api";
+   private _baseUrl = "/devise-api"; //via reverse-proxy de ng-serve ou autre
+
   //V1 (simulation)
   //V2 : appel de web service REST
   //URL=https://www.d-defrance.fr/tp/devise-api/public/devise
@@ -43,7 +47,7 @@ export class DeviseService {
   
   //version 2 (vrai appel HTTP)
   public getAllDevises$() : Observable<Devise[]>{
-   let wsURL="https://www.d-defrance.fr/tp/devise-api/public/devise";
+   let wsURL=this._baseUrl + "/public/devise";
    return this.http.get<Devise[]>(wsURL)
               .pipe(
                 map( (tabDevises) => tabDevises.sort( (d1,d2) => d1?d1.code.localeCompare(d2.code):0 ) )
@@ -51,7 +55,7 @@ export class DeviseService {
   }
 
   public postDevise$(devise :Devise) : Observable<Devise>{
-    let wsURL="https://www.d-defrance.fr/tp/devise-api/private/devise";
+    let wsURL=this._baseUrl + "/private/devise";
     return this.http.post<Devise>(wsURL,devise);
   }
 
@@ -76,7 +80,7 @@ public convertir$(montant: number,
   codeDeviseTarget : string
   ) : Observable<number> {
     //let wsURL="https://www.d-defrance.fr/tp/devise-api/public/convert?source=EUR&target=USD&amount=50";
-    let wsURL=`https://www.d-defrance.fr/tp/devise-api/public/convert?source=${codeDeviseSrc}&target=${codeDeviseTarget}&amount=${montant}`;
+    let wsURL=`${this._baseUrl}/public/convert?source=${codeDeviseSrc}&target=${codeDeviseTarget}&amount=${montant}`;
    return this.http.get<ResConv>(wsURL)
                    .pipe(
                        map( (res:ResConv) => res.result )

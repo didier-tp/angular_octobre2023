@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  private _baseUrl = "https://www.d-defrance.fr/tp/standalone-login-api";
+  //private _baseUrl = "https://www.d-defrance.fr/tp/standalone-login-api";
+  private _baseUrl = "/standalone-login-api"; //avec reverse proxy de ng serve ou autre
 
   constructor(private http: HttpClient) { 
     //injection de dépendance http
