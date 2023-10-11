@@ -1,14 +1,14 @@
 <h3>login</h3>
 <form #formLogin="ngForm">
   <div class="myFormGroup">
-    <label class="myLabel">username:</label>
+    <label class="myLabel">username (ex: admin1):</label>
     <div class="myItem">
        <input class="myMaxSize" [(ngModel)]="login.username" name="username" required  pattern="^[a-zA-Z].+" /> 
       </div>
   </div>
 
   <div class="myFormGroup">
-    <label class="myLabel">password:</label>
+    <label class="myLabel">password (ex: pwd1):</label>
     <div class="myItem">
    <input class="myMaxSize" [(ngModel)]="login.password"  name="password" required minlength="3" /> 
    </div>

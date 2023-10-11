@@ -1,14 +1,14 @@
 <h3>login</h3>
 <form #formLogin="ngForm">
   <div class="form-group row">
-    <label class="col-sm-3">username:</label>
+    <label class="col-sm-3">username (ex: admin1):</label>
     <div class="col-sm-9  mb-1">
        <input class="form-control" [(ngModel)]="login.username" name="username" required  pattern="^[a-zA-Z].+" /> 
       </div>
   </div>
 
   <div class="form-group row">
-    <label class="col-sm-3">password:</label>
+    <label class="col-sm-3">password (ex: pwd1):</label>
     <div class="col-sm-9 mb-1">
    <input class="form-control " [(ngModel)]="login.password"  name="password" required minlength="3" /> 
    </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Login } from '../common/data/login';
+import { Login, LoginResponse } from '../common/data/login';
 import { SessionService } from '../common/service/session.service';
+import { LoginService } from '../common/service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -20,9 +21,25 @@ export class LoginComponent  implements OnInit {
 
      //V2: appeler loginService.postLogin$(this.login)
      //et selon le résultat mettre à jour le "message"
+     this.loginService.postLogin$(this.login)
+         .subscribe({ next:  (loginResp : LoginResponse) => { this.analyserLoginResponse(loginResp)} ,
+                      error : (err) =>  { this.message="une erreur technique a eu lieu ..." +JSON.stringify(err)}
+                    });
+
+                        
   }
 
-  constructor(public sessionService : SessionService) {
+  analyserLoginResponse(loginResp : LoginResponse){
+      this.message = loginResp.message;
+      this.sessionService.isConnected=loginResp.status;
+      if(loginResp.status)
+           this.sessionService.username = this.login.username;
+      else
+           this.sessionService.username = "? (not authenticated)";
+  } 
+
+  constructor(public sessionService : SessionService,
+              private loginService: LoginService ) {
     //injection de dépendance par constructeur
    }
 
