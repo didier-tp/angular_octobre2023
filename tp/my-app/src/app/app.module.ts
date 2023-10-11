@@ -24,6 +24,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { ConversionComponent } from './conversion/conversion.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DeviseComponent } from './devise/devise.component';
+import { DeviseComponent2 } from './devise2/devise2.component';
 import { MyAuthInterceptor } from './common/interceptor/my-auth.interceptor';
 import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
@@ -47,6 +48,7 @@ import { NotAuthorizedComponent } from './not-authorized/not-authorized.componen
     TogglePanelComponent,
     ConversionComponent,
     DeviseComponent,
+    DeviseComponent2,
     NotAuthorizedComponent
   ],
   imports: [
