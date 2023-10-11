@@ -11,6 +11,7 @@ import { LoginService } from '../common/service/login.service';
 export class LoginComponent  implements OnInit {
   public login : Login = new Login();
   public message :string ="";
+  
   public onLogin(){
     /*
     //V1

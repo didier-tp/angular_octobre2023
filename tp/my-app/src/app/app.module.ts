@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ConversionComponent } from './conversion/conversion.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DeviseComponent } from './devise/devise.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ReactiveLoginComponent,
     TogglePanelComponent,
-    ConversionComponent
+    ConversionComponent,
+    DeviseComponent
   ],
   imports: [
     BrowserModule,

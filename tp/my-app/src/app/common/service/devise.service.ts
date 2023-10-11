@@ -50,6 +50,11 @@ export class DeviseService {
               );  //transformer tableau pas trié en tableau trié
   }
 
+  public postDevise$(devise :Devise) : Observable<Devise>{
+    let wsURL="https://www.d-defrance.fr/tp/devise-api/private/devise";
+    return this.http.post<Devise>(wsURL,devise);
+  }
+
   /*
   //V1 (simulation)
   public convertir$(montant: number,
