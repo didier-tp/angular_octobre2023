@@ -44,7 +44,10 @@ export class DeviseService {
   //version 2 (vrai appel HTTP)
   public getAllDevises$() : Observable<Devise[]>{
    let wsURL="https://www.d-defrance.fr/tp/devise-api/public/devise";
-   return this.http.get<Devise[]>(wsURL);
+   return this.http.get<Devise[]>(wsURL)
+              .pipe(
+                map( (tabDevises) => tabDevises.sort( (d1,d2) => d1?d1.code.localeCompare(d2.code):0 ) )
+              );  //transformer tableau pas trié en tableau trié
   }
 
   /*

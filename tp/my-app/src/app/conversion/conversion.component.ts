@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Devise } from '../common/data/devise';
 import { DeviseService } from '../common/service/devise.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-conversion',
@@ -31,6 +32,17 @@ export class ConversionComponent {
         //Attention : sur cette ligne , le résultat n'est à ce stade pas encore connu
         //car appel asynchrone non bloquant et réponse ultérieure via callback
   }
+
+  async onConvertirV2(){
+   try{
+      let res :number = await  firstValueFrom(this._deviseService.convertir$(this.montant,
+                                  this.codeDeviseSource,
+                                  this.codeDeviseCible));
+      this.montantConverti = res;
+   }catch(ex){
+       console.log(ex);
+   }
+}
 
 
   initListeDevises(tabDevises : Devise[]){
