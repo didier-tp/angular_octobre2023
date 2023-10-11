@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CalculatriceComponent } from './calculatrice.component';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 describe('CalculatriceComponent', () => {
   let component: CalculatriceComponent;
@@ -8,6 +10,7 @@ describe('CalculatriceComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [ FormsModule , AppRoutingModule] ,
       declarations: [CalculatriceComponent]
     });
     fixture = TestBed.createComponent(CalculatriceComponent);
