@@ -25,6 +25,7 @@ import { ConversionComponent } from './conversion/conversion.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DeviseComponent } from './devise/devise.component';
 import { MyAuthInterceptor } from './common/interceptor/my-auth.interceptor';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MyAuthInterceptor } from './common/interceptor/my-auth.interceptor';
     ReactiveLoginComponent,
     TogglePanelComponent,
     ConversionComponent,
-    DeviseComponent
+    DeviseComponent,
+    NotAuthorizedComponent
   ],
   imports: [
     BrowserModule,

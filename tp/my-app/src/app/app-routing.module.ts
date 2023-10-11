@@ -10,6 +10,8 @@ import { DeviseComponent } from './devise/devise.component';
 
 import { TvaComponent } from './basic/tva/tva.component';
 import { CalculatriceComponent } from './basic/calculatrice/calculatrice.component';
+import { CanActivateAdminRouteGuard } from './common/guard/can-activate-admin-route-guard';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
 //WelcomeComponent créé via
 //ng g component welcome
@@ -25,8 +27,10 @@ const routes: Routes = [
    { path: '', redirectTo: 'tva', pathMatch: 'prefix'}
    ]
   },
+  { path : "not-authorized" , component : NotAuthorizedComponent },
   { path: 'conversion', component: ConversionComponent },
-  { path: 'devise', component: DeviseComponent },
+  { path: 'devise', component: DeviseComponent ,
+           canActivate : [CanActivateAdminRouteGuard] },
   { path: 'demo', component: DemoComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full'},
   { path: '**', redirectTo: '/welcome', pathMatch: 'full'}
