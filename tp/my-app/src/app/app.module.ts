@@ -22,8 +22,9 @@ import { TogglePanelComponent } from './common/component/toggle-panel/toggle-pan
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ConversionComponent } from './conversion/conversion.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DeviseComponent } from './devise/devise.component';
+import { MyAuthInterceptor } from './common/interceptor/my-auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,13 @@ import { DeviseComponent } from './devise/devise.component';
     AppRoutingModule, FormsModule , ReactiveFormsModule, BrowserAnimationsModule,
     MatTabsModule , HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MyAuthInterceptor,
+      multi: true
+      }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,6 +6,7 @@ import { BasicComponent } from './basic/basic.component';
 import { ReactiveLoginComponent } from './reactive-login/reactive-login.component';
 import { DemoComponent } from './demo/demo.component';
 import { ConversionComponent } from './conversion/conversion.component';
+import { DeviseComponent } from './devise/devise.component';
 
 //WelcomeComponent créé via
 //ng g component welcome
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'loginV2', component: ReactiveLoginComponent },
   { path: 'basic', component: BasicComponent },
   { path: 'conversion', component: ConversionComponent },
+  { path: 'devise', component: DeviseComponent },
   { path: 'demo', component: DemoComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full'},
   { path: '**', redirectTo: '/welcome', pathMatch: 'full'}
