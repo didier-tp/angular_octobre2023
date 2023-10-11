@@ -5,6 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class PreferencesService {
 
+public add(x:number , y : number){
+   return x+y;
+}
+
 //public couleurFondPreferee :string = 'lightgrey'; //v1 : public
 private _couleurFondPreferee :string ="?"; //v2 : private + get/set + localStorage
 

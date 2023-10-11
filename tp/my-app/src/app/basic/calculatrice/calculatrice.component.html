@@ -1,6 +1,6 @@
 <p>calculatrice works!</p>
-<label>a :</label> <input type="number" [(ngModel)]="a" > <br>
-<label>b :</label> <input type="number" [(ngModel)]="b" > <br>
+<label>a :</label> <input type="number" name="a" [(ngModel)]="a" > <br>
+<label>b :</label> <input type="number" name="b" [(ngModel)]="b" > <br>
 <label>operation :</label>
 <input type="button" value="+" (click)="onCalculer('+')" > &nbsp;
 <input type="button" value="-" (click)="onCalculer('-')" > &nbsp;
@@ -8,7 +8,7 @@
    [style.visibility]="modeChoisi=='sophistiquee'?'visible':'hidden'">
 <br>
 <label>resultat:</label>
-<span [style.font-weight]="res>0?'bold':'normal'" [class.negatif]="res<0" >
+<span id="spanRes" [style.font-weight]="res>0?'bold':'normal'" [class.negatif]="res<0" >
 {{res}}
 </span> <br>
 <hr>
