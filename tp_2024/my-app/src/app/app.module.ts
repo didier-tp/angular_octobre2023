@@ -11,6 +11,7 @@ import { TvaComponent } from './basic/tva/tva.component';
 import { FormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
+import { MynumberPipe } from './common/pipe/mynumber.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoginComponent } from './login/login.component';
     CalculatriceComponent,
     TvaComponent,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    MynumberPipe
   ],
   imports: [
     BrowserModule,
