@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class TvaComponent {
     listeTaux=[5,10,20];
+    
     ht=0;
     taux=20;//en %
     tva=0;
