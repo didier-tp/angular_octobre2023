@@ -13,8 +13,16 @@ export class TvaComponent {
     tva=0;
     ttc=0;
 
+    listePays=['France','Allemagne','Espagne','Finlande','Italie'];
+
     onCalculerTvaTtc(){
       this.tva=this.taux/100 * this.ht;
       this.ttc = this.tva + this.ht;
+    }
+
+    onErrorExample(){
+      let a =null;
+      let b = <string> <unknown> a;
+      console.log("b.length="+b.length);
     }
 }

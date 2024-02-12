@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { MynumberPipe } from './common/pipe/mynumber.pipe';
+import { VeryBasicFilterPipe } from './common/pipe/very-basic-filter.pipe';
+import { MyCustomErrorHandler } from './common/handler/my-custom-error-handler';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { MynumberPipe } from './common/pipe/mynumber.pipe';
     TvaComponent,
     WelcomeComponent,
     LoginComponent,
-    MynumberPipe
+    MynumberPipe,
+    VeryBasicFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,11 @@ import { MynumberPipe } from './common/pipe/mynumber.pipe';
     FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    {
+      provide: ErrorHandler,
+      useClass: MyCustomErrorHandler
+    }
   ],
   bootstrap: [AppComponent]
 })

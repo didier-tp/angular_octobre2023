@@ -19,6 +19,8 @@ export class CalculatriceComponent {
         this.res = this.a - this.b; break;
       case "*":
         this.res = this.a * this.b; break;
+      case "/":
+        this.res = this.a / this.b; break;
       default:
         this.res = 0;
     }

@@ -1,0 +1,89 @@
+Zone.js est utilisé en interne par angular (dans package.json)  pour la détection automatique des changements
+***************
+***************
+Langage possibles pour angular: 
+Dart , javascript , Typescript AU TOUT DEBUT (angular 2) mais pas java,scala
+***************
+***************
+@Input, @Output n'ont rien à voir avec les appels de WS REST
+***************
+***************
+NgRx (Store/State, Reducer,Action) inspiré de Redux est une extension faculative d'angular 
+pour ceux qui sont habitués à utiliser redux avec react
+**************
+**************
+PWA (Progressive Web App) 
+Dans "Progressive Web App" le terme "progressif" signifie que l'utilisateur d'un smartphone peut de
+manière très progressive :
+• naviguer sur internet et utiliser l'application web comme un site ordinaire
+• utiliser potentiellement l'application en mode "plein écran" (comme une appli mobile)
+• générer un "icône/raccourci" de lancement sur le fond du bureau (pour relancer
+ultérieurement cette appli en mode "navigateur pas encore ouvert")
+• utiliser certaines parties de l'application en mode "déconnecté" grâce à des "service -
+workers" (tâches de fond pouvant faire office de "cache" ou "proxy" )
+• finalement utiliser l'application web aussi facilement que si elle était native et disposer
+
+cet ajout de fonctionnalité s'effectue essentiellement
+via 
+ng add @angular/pwa
+
+*******************
+*******************
+
+Eventel filtrage de données via @Pipe en utilisant en interne .filter() sur collection à filtrer:
+-----------------------------------------------------------------------------------------------
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'veryBasicFilter'
+})
+export class VeryBasicFilterPipe implements PipeTransform {
+
+  transform(values: string[], arg0: string): string[] {
+    return values.filter(val => val.toLowerCase().includes(arg0.toLowerCase()));
+  }
+}
+
+<hr/>
+Filtrage extrement basique (sans trop d'interet) par pipe: <br/>
+listePays={{listePays}} <br/>
+listePays comportant "F" ={{listePays | veryBasicFilter:"F"}} <br/>
+<ul>
+   <li *ngFor="let p of listePays | veryBasicFilter:'F' ">{{p}}</li>
+</ul>
+<!-- ça fonctionne mais il y a d'autres manières plus adaptées (ex: RxJs) -->
+
+********************************
+********************************
+
+custom errorHandler:
+-------------------
+
+import { ErrorHandler } from '@angular/core';
+
+export class MyCustomErrorHandler implements ErrorHandler {
+  handleError(error:any) {
+    // Do what you want here, but throw it so that it's visible on the console!
+    console.log("** " + error + " **");
+    //useful use case : send error to a remote REST API
+    if(error instanceof Error) throw error;
+    else throw new Error(error);
+  }
+}
+/*
+A enregistrer dans @NgModule via 
+
+providers: [{
+  provide: ErrorHandler,
+  useClass: MyCustomErrorHandler
+}]
+
+*/
+
+<button (click)="onErrorExample()">error example</button> <br/>
+-------
+onErrorExample(){
+      let a =null;
+      let b = <string> <unknown> a;
+      console.log("b.length="+b.length);
+    }

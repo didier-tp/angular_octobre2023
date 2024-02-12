@@ -9,3 +9,13 @@
 tva=<span class="enEvidence">{{tva | number:'1.0-2'}}</span><br/>
 ttc=<span class="enEvidence">{{ttc | mynumber:'1.0-2'}}</span>
 </div>
+<hr/>
+Filtrage extrement basique (sans trop d'interet) par pipe: <br/>
+listePays={{listePays}} <br/>
+listePays comportant "F" ={{listePays | veryBasicFilter:"F"}} <br/>
+<ul>
+   <li *ngFor="let p of listePays | veryBasicFilter:'F' ">{{p}}</li>
+</ul>
+<!-- ça fonctionne mais il y a d'autres manières plus adaptées (ex: RxJs) -->
+
+<button (click)="onErrorExample()">error example</button> <br/> 
