@@ -1,1 +1,16 @@
-<p>calculatrice works!</p>
+<p>calculatrice</p>
+<label>a:</label> <input type="number" [(ngModel)]="a" /> <br/>
+<label>b:</label> <input type="number" [(ngModel)]="b" /> <br/>
+<button (click)="onCalculer('+')">+</button> &nbsp;
+<button (click)="onCalculer('-')">-</button> &nbsp;
+<button (click)="onCalculer('*')">*</button> <br/>
+res= <span [style.font-weight]="res>0?'bold':'normal'"
+           [class.negatif]="res<0"> {{res}} </span>
+           
+           
+<hr/>
+    <div class="c2" (mousemove)="onMouseMove($event)"
+           (mouseout)="onMouseLeave($event)">
+           Zone à survoler à la souris .<br>
+           x={{x}} , y={{y}}
+    </div>
