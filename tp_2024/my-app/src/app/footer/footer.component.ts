@@ -12,6 +12,8 @@ export class FooterComponent {
     listeCouleurs : string[] = [ "lightyellow", "white",
      "lightgrey" , "lightgreen" , "lightpink" , "lightblue"] ; 
 
-  constructor(public preferencesService : PreferencesService) { }
+  constructor(public preferencesService : PreferencesService) {
+    //injection de dépendance par constructeur car dans @Component
+   }
 
 }
