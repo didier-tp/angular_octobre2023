@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 
 
 /*
-NB: avec angular 17, pour ne pas êtreembêté avec localStorage 
-il faut ajouter 
+NB: avec angular 17, pour ne pas être embêté avec localStorage 
+il faut si besoin ajouter 
 "ssr": false,  "prerender": false 
 dans angular.json près des lignes 72,73
   "development": {
