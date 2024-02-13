@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { MynumberPipe } from './common/pipe/mynumber.pipe';
 import { VeryBasicFilterPipe } from './common/pipe/very-basic-filter.pipe';
 import { MyCustomErrorHandler } from './common/handler/my-custom-error-handler';
+import { TogglePanelComponent } from './common/component/toggle-panel/toggle-panel.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MyCustomErrorHandler } from './common/handler/my-custom-error-handler';
     WelcomeComponent,
     LoginComponent,
     MynumberPipe,
-    VeryBasicFilterPipe
+    VeryBasicFilterPipe,
+    TogglePanelComponent
   ],
   imports: [
     BrowserModule,

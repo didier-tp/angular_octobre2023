@@ -1,7 +1,9 @@
-<app-header></app-header>
-<h1>OK</h1>
 
-<!-- affiche le composant lie à la route courante --> 
-<router-outlet />
-
-<app-footer></app-footer>
+<div class="container-fluid">
+   <!-- <app-header titre="monAppliAngular"  ></app-header> -->
+    <app-header [titre]="title"  ></app-header>
+    <!-- affiche le composant lie à la route courante --> 
+    <router-outlet />
+    
+    <app-footer    ></app-footer>
+</div>
