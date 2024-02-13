@@ -2,6 +2,14 @@ import { Injectable } from '@angular/core';
 import { Devise } from '../data/devise';
 import { Observable, of } from 'rxjs';
 import { delay, map} from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+
+class ConvertRes {
+    constructor(public amount:number=0,
+                public source:string="",
+                public target:string="",
+                public result:number=0){}
+}
 
 
 @Injectable({
@@ -9,7 +17,34 @@ import { delay, map} from 'rxjs/operators';
 })
 export class DeviseService {
 
-  //jeux de données (en dur) pour pré-version (simulation asynchrone)
+  baseUrl = "https://www.d-defrance.fr/tp/devise-api/public";
+
+ constructor(private http: HttpClient){
+ }
+
+  public getAllDevises$() : Observable<Devise[]>{
+     let url = this.baseUrl + "/devise";
+     return this.http.get<Devise[]>(url);
+  }
+
+  public convertir$(montant: number,
+                   codeDeviseSrc : string, 
+                   codeDeviseTarget : string
+                   ) : Observable<number> {
+    let url = this.baseUrl 
+    + `/convert?source=${codeDeviseSrc}&target=${codeDeviseTarget}&amount=${montant}`;
+    console.log("url="+url);
+    return this.http.get<ConvertRes>(url).pipe(
+      map((convertRes) => convertRes.result)
+    );
+  }
+
+}
+
+/*
+V1 simulée:
+
+//jeux de données (en dur) pour pré-version (simulation asynchrone)
   private devises : Devise[] = [
     new Devise('EUR','euro',1.0),
     new Devise('USD','dollar',1.1),
@@ -34,5 +69,4 @@ export class DeviseService {
                  delay(222) //simuler une attente de 222ms 
             );
   }
-
-}
+*/

@@ -18,6 +18,7 @@ import { TogglePanelComponent } from './common/component/toggle-panel/toggle-pan
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ConversionComponent } from './conversion/conversion.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ConversionComponent } from './conversion/conversion.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),
