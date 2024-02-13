@@ -15,6 +15,8 @@ import { MynumberPipe } from './common/pipe/mynumber.pipe';
 import { VeryBasicFilterPipe } from './common/pipe/very-basic-filter.pipe';
 import { MyCustomErrorHandler } from './common/handler/my-custom-error-handler';
 import { TogglePanelComponent } from './common/component/toggle-panel/toggle-panel.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -33,14 +35,16 @@ import { TogglePanelComponent } from './common/component/toggle-panel/toggle-pan
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule
   ],
   providers: [
     provideClientHydration(),
     {
       provide: ErrorHandler,
       useClass: MyCustomErrorHandler
-    }
+    },
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
