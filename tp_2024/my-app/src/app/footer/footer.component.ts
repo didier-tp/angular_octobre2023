@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PreferencesService } from '../common/service/preferences.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
     today = new Date();
+
+    listeCouleurs : string[] = [ "lightyellow", "white",
+     "lightgrey" , "lightgreen" , "lightpink" , "lightblue"] ; 
+
+  constructor(public preferencesService : PreferencesService) { }
+
 }
