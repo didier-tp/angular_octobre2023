@@ -59,7 +59,7 @@ export class ConversionComponent {
         await firstValueFrom(this._deviseService.deleteDevise$(this.codeToDelete));
     } catch (err) {
       console.log(err);
-      this.message = <string> err;
+      this.message = <string> JSON.stringify(err);
     }
   }
 

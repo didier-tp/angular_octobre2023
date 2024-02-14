@@ -38,10 +38,12 @@ export class LoginComponent {
    }
 
    async onLogin(){
+      sessionStorage.setItem("authToken","");
       try{
         let loginResponse = await firstValueFrom( this.loginService.postLogin$(this.login));
         this.message=loginResponse.message;
         this.status = loginResponse.status;  
+        sessionStorage.setItem("authToken",loginResponse.token);
       }
       catch(err){
         console.log("error:" + err);

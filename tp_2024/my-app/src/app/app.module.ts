@@ -18,12 +18,13 @@ import { TogglePanelComponent } from './common/component/toggle-panel/toggle-pan
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ConversionComponent } from './conversion/conversion.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DemoComponent } from './demo/demo.component';
 import { RegletteComponent } from './demo/reglette/reglette.component';
 import { SeuilComponent } from './demo/seuil/seuil.component';
 import { ListProdComponent } from './demo/list-prod/list-prod.component';
 import { ZzComponent } from './demo/zz/zz.component';
+import { MyAuthInterceptor } from './common/interceptor/my-auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,12 @@ import { ZzComponent } from './demo/zz/zz.component';
       provide: ErrorHandler,
       useClass: MyCustomErrorHandler
     },
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MyAuthInterceptor,
+      multi: true
+      }
   ],
   bootstrap: [AppComponent]
 })
