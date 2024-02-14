@@ -26,7 +26,10 @@ export class DeviseService {
 
   public getAllDevises$() : Observable<Devise[]>{
      let url = this.baseUrl + "/devise";
-     return this.http.get<Devise[]>(url);
+     return this.http.get<Devise[]>(url)
+     .pipe(
+         map( tabDevises => tabDevises.sort((d1,d2) => d1?d1.code.localeCompare(d2.code):0)) 
+     );
   }
 
   public deleteDevise$(codeDeviseToDelete : string) : Observable<void>{

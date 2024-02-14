@@ -57,6 +57,7 @@ export class ConversionComponent {
   async onDelete() {
     try {
         await firstValueFrom(this._deviseService.deleteDevise$(this.codeToDelete));
+        this.message="suppression ok";
     } catch (err) {
       console.log(err);
       this.message = <string> JSON.stringify(err);
