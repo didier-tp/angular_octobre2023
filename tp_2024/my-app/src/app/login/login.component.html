@@ -5,7 +5,7 @@
     <div class="form-group row">
     <label class="col-sm-3" >username:</label>
     <div class="col-sm-9">
-            <input [(ngModel)]="login.username" class="form-control" name="username" required pattern="^[a-zA-Z].+"
+          <input [(ngModel)]="login.username"  class="form-control" name="username" required pattern="^[a-zA-Z].+"
            #usernameCtrl = "ngModel" /> 
           <!-- <span [hidden]="usernameCtrl.valid">le username doit commencer par une lettre et être suivi d'au moins un autre caractère</span> -->
           <!-- <span [hidden]="usernameCtrl.valid">{{usernameCtrl.errors | json}}</span> -->

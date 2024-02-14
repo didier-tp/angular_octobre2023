@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Login, LoginResponse } from '../common/data/login';
 import { LoginService } from '../common/service/login.service';
 import { messageFromError } from '../common/util/util';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
       //injection de dépendance
    }
 
-   onLogin(){
+   onLoginV1(){
     //V1:
     //this.message="valeurs saisies=" + JSON.stringify(this.login);
     //V2:
@@ -34,5 +35,17 @@ export class LoginComponent {
         }
       }
     );
+   }
+
+   async onLogin(){
+      try{
+        let loginResponse = await firstValueFrom( this.loginService.postLogin$(this.login));
+        this.message=loginResponse.message;
+        this.status = loginResponse.status;  
+      }
+      catch(err){
+        console.log("error:" + err);
+        this.message =  "echec login";
+      }
    }
 }
