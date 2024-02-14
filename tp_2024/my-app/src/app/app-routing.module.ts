@@ -7,6 +7,7 @@ import { ConversionComponent } from './conversion/conversion.component';
 import { DemoComponent } from './demo/demo.component';
 import { TvaComponent } from './basic/tva/tva.component';
 import { CalculatriceComponent } from './basic/calculatrice/calculatrice.component';
+import { authGardGuard } from './common/guard/auth-gard.guard';
 
 const routes: Routes = [
   { path: "ngr-welcome" , component : WelcomeComponent},
@@ -19,7 +20,7 @@ const routes: Routes = [
       ]
   },
   { path: "ngr-login" , component : LoginComponent},
-  { path: "ngr-conversion" , component : ConversionComponent},
+  { path: "ngr-conversion" , component : ConversionComponent , canActivate:[authGardGuard]},
   { path: "ngr-demo" , component : DemoComponent},
 ]; 
 
