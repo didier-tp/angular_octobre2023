@@ -3,6 +3,7 @@ import { Login, LoginResponse } from '../common/data/login';
 import { LoginService } from '../common/service/login.service';
 import { messageFromError } from '../common/util/util';
 import { firstValueFrom } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
    message = "";
    status = false;
 
-   constructor(private loginService: LoginService){
+   constructor(private loginService: LoginService,private router : Router){
       //injection de dépendance
    }
 
@@ -44,6 +45,7 @@ export class LoginComponent {
         this.message=loginResponse.message;
         this.status = loginResponse.status;  
         sessionStorage.setItem("authToken",loginResponse.token);
+        //this.router.navigate([ '/ngr-conversion']); //navigation possible par programmation
       }
       catch(err){
         console.log("error:" + err);
