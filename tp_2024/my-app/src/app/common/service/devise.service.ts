@@ -19,6 +19,7 @@ export class DeviseService {
 
   //baseUrl = "https://www.d-defrance.fr/tp/devise-api/public";
   baseUrl = "/devise-api/public"; //via proxy.conf.json et angular.json
+  baseSecureUrl = "/devise-api/private";
 
  constructor(private http: HttpClient){
  }
@@ -27,6 +28,11 @@ export class DeviseService {
      let url = this.baseUrl + "/devise";
      return this.http.get<Devise[]>(url);
   }
+
+  public deleteDevise$(codeDeviseToDelete : string) : Observable<void>{
+    let url = this.baseSecureUrl + "/devise/" + codeDeviseToDelete;
+    return this.http.delete<void>(url);
+ }
 
   public convertir$(montant: number,
                    codeDeviseSrc : string, 

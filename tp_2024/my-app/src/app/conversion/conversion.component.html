@@ -8,4 +8,8 @@ code devise cible : <select [(ngModel)]="codeDeviseCible" >
 </select> <br/>
 <input type="button" (click)="onConvertirV2()" value="convertir" /> <br/>
 montantConverti = {{montantConverti}} <br/>
+<hr/>
 {{message}}
+<hr/>
+code devise a supprimer: <input [(ngModel)]="codeToDelete" /> 
+<button (click)="onDelete()">delete devise</button>

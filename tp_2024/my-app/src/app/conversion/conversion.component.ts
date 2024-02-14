@@ -16,6 +16,8 @@ export class ConversionComponent {
   montantConverti: number = 0;
   message = "";
 
+  codeToDelete="?";
+
   listeDevises: Devise[] = []; //à choisir dans liste déroulante.
 
   constructor(private _deviseService: DeviseService) { }
@@ -46,6 +48,15 @@ export class ConversionComponent {
            await firstValueFrom(this._deviseService.convertir$(this.montant,
                                                              this.codeDeviseSource,
                                                              this.codeDeviseCible));
+    } catch (err) {
+      console.log(err);
+      this.message = <string> err;
+    }
+  }
+
+  async onDelete() {
+    try {
+        await firstValueFrom(this._deviseService.deleteDevise$(this.codeToDelete));
     } catch (err) {
       console.log(err);
       this.message = <string> err;
