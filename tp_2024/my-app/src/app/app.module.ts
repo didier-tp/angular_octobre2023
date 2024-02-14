@@ -19,6 +19,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {MatTabsModule} from '@angular/material/tabs';
 import { ConversionComponent } from './conversion/conversion.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DemoComponent } from './demo/demo.component';
+import { RegletteComponent } from './demo/reglette/reglette.component';
+import { SeuilComponent } from './demo/seuil/seuil.component';
+import { ListProdComponent } from './demo/list-prod/list-prod.component';
+import { ZzComponent } from './demo/zz/zz.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,12 @@ import { HttpClientModule } from '@angular/common/http';
     MynumberPipe,
     VeryBasicFilterPipe,
     TogglePanelComponent,
-    ConversionComponent
+    ConversionComponent,
+    DemoComponent,
+    RegletteComponent,
+    SeuilComponent,
+    ListProdComponent,
+    ZzComponent
   ],
   imports: [
     BrowserModule,
