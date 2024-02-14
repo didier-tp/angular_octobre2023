@@ -6,7 +6,7 @@
 <label>b:</label> <input type="number" required [(ngModel)]="b" /> <br/>
 <button (click)="onCalculer('+')">+</button> &nbsp;
 <button (click)="onCalculer('-')">-</button> &nbsp;
-<button (click)="onCalculer('*')">*</button> &nbsp;
+<button [style.visibility]="modeChoisi=='simple'?'hidden':'visible'"   (click)="onCalculer('*')">*</button> &nbsp;
 <button (click)="onCalculer('/')">/</button> <br/>
 res= <span [style.font-weight]="res>0?'bold':'normal'"
            [class.negatif]="res<0"> {{res}} </span>

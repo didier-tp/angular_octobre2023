@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-calculatrice',
@@ -9,6 +10,15 @@ export class CalculatriceComponent {
   a /*:number*/ = 0;
   b = 0;
   res = 0;
+
+  modeChoisi="simple"; //ou "sophistiquee"
+
+  constructor(route : ActivatedRoute){
+    route.params.subscribe(
+      //path: "calculatrice/:mode"
+      (params: Params)=>{  this.modeChoisi = params['mode'] ;}
+    );
+  }
 
   onCalculer(op: string) {
     switch (op) {
